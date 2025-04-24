@@ -2,143 +2,154 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercícios de JavaScript</title>
+  <title>Atividades JavaScript - Estilo iOS</title>
   <style>
     body {
-      background-color: #f1f5f9;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 30px;
-      color: #2f3542;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f9f9fb;
+      color: #1c1c1e;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #007aff;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+
+    section {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      margin: 20px auto;
+      max-width: 600px;
+      padding: 24px 20px;
+      transition: all 0.3s ease;
     }
 
     h2 {
-      color: #2c3e50;
-      text-align: center;
+      font-size: 18px;
+      color: #007aff;
+      font-weight: 500;
+      border-left: 4px solid #007aff;
+      padding-left: 10px;
       margin-bottom: 15px;
     }
 
-    .exercicio {
-      background-color: #ffffff;
-      border: 1px solid #dcdde1;
+    input[type="number"] {
+      padding: 12px;
+      margin: 8px 5px;
+      width: calc(50% - 20px);
+      font-size: 16px;
+      border: 1px solid #d1d1d6;
       border-radius: 10px;
-      padding: 25px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      outline: none;
+      background-color: #f2f2f7;
+      color: #1c1c1e;
     }
 
     button {
-      background-color: #1e90ff;
-      color: white;
-      padding: 10px 18px;
-      font-size: 15px;
+      padding: 12px 20px;
+      background-color: #007aff;
       border: none;
-      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      border-radius: 12px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s ease;
       margin-top: 10px;
+      display: block;
     }
 
     button:hover {
-      background-color: #1c86ee;
-    }
-
-    input {
-      padding: 10px;
-      margin: 8px 5px 12px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 15px;
-      width: calc(50% - 14px);
+      background-color: #005ecb;
     }
 
     p {
-      margin-top: 12px;
       font-size: 16px;
+      margin-top: 15px;
+      color: #3a3a3c;
     }
 
-    .resultado {
-      font-weight: bold;
-      color: #34495e;
-      margin-top: 10px;
+    p::selection,
+    input::selection {
+      background-color: #cce4ff;
+    }
+
+    ::placeholder {
+      color: #aaa;
     }
   </style>
 </head>
 <body>
 
-  <div class="exercicio">
-    <h2>Mensagem "Olá Mundo" (1)</h2>
-    <button onclick="mostrarOlaMundo()">Mostrar Mensagem</button>
-    <p id="resultado1" class="resultado"></p>
-  </div>
+  <h1>Atividades JavaScript</h1>
 
-  <div class="exercicio">
-    <h2>Soma de dois inteiros (2)</h2>
-    <input type="number" id="numero1" placeholder="Primeiro número">
-    <input type="number" id="numero2" placeholder="Segundo número">
-    <br>
-    <button onclick="calcularSoma()">Calcular Soma</button>
-    <p id="resultado2" class="resultado"></p>
-  </div>
+  <!-- Atividade 1: Olá Mundo -->
+  <section>
+    <h2>1. Olá Mundo</h2>
+    <p>Uma mensagem de boas-vindas será exibida ao carregar a página.</p>
+    <script>
+      alert('Olá Mundo');
+    </script>
+  </section>
 
-  <div class="exercicio">
-    <h2>Alterar propriedade por ID (3)</h2>
-    <p id="paragrafoId">Este parágrafo terá sua cor alterada pelo ID.</p>
-    <button onclick="alterarPorId()">Alterar cor por ID</button>
-  </div>
-
-  <div class="exercicio">
-    <h2>Alterar propriedade por name (4)</h2>
-    <input type="text" name="campoNome" value="Texto original">
-    <br>
-    <button onclick="alterarPorName()">Alterar cor por name</button>
-  </div>
-
-  <div class="exercicio">
-    <h2>Alterar propriedade por classe (5)</h2>
-    <p class="paragrafoClasse">Este é o primeiro parágrafo com a classe.</p>
-    <p class="paragrafoClasse">Este é o segundo parágrafo com a classe.</p>
-    <p class="paragrafoClasse">Este é o terceiro parágrafo com a classe.</p>
-    <button onclick="alterarPorClasse()">Alterar cor por classe</button>
-  </div>
-
-  <script>
-    function mostrarOlaMundo() {
-      document.getElementById("resultado1").textContent = "Olá Mundo!";
-    }
-
-    function calcularSoma() {
-      const num1 = parseInt(document.getElementById("numero1").value);
-      const num2 = parseInt(document.getElementById("numero2").value);
-      const resultado = document.getElementById("resultado2");
-
-      if (!isNaN(num1) && !isNaN(num2)) {
-        resultado.textContent = `A soma de ${num1} + ${num2} = ${num1 + num2}`;
-      } else {
-        resultado.textContent = "Por favor, insira dois números válidos.";
+  <!-- Atividade 2: Soma de 2 inteiros -->
+  <section>
+    <h2>2. Soma de 2 inteiros</h2>
+    <input type="number" id="num1" placeholder="Primeiro número">
+    <input type="number" id="num2" placeholder="Segundo número">
+    <button onclick="somar()">Somar</button>
+    <p id="resultadoSoma"></p>
+    <script>
+      function somar() {
+        const num1 = parseInt(document.getElementById('num1').value);
+        const num2 = parseInt(document.getElementById('num2').value);
+        const resultado = num1 + num2;
+        document.getElementById('resultadoSoma').textContent = 'Resultado: ' + resultado;
       }
-    }
+    </script>
+  </section>
 
-    function alterarPorId() {
-      document.getElementById("paragrafoId").style.color = "#e74c3c";
-    }
-
-    function alterarPorName() {
-      const elementos = document.getElementsByName("campoNome");
-      for (let i = 0; i < elementos.length; i++) {
-        elementos[i].style.color = "#2980b9";
+  <!-- Atividade 3: Alterar propriedade por ID -->
+  <section>
+    <h2>3. Alterar propriedade por ID</h2>
+    <p id="paragrafoId">Texto original.</p>
+    <button onclick="alterarPorId()">Alterar texto por ID</button>
+    <script>
+      function alterarPorId() {
+        document.getElementById('paragrafoId').textContent = 'Texto alterado por ID.';
       }
-    }
+    </script>
+  </section>
 
-    function alterarPorClasse() {
-      const elementos = document.getElementsByClassName("paragrafoClasse");
-      for (let i = 0; i < elementos.length; i++) {
-        elementos[i].style.color = "#27ae60";
+  <!-- Atividade 4: Alterar propriedade por Name -->
+  <section>
+    <h2>4. Alterar propriedade por Name</h2>
+    <p name="paragrafoName">Texto original.</p>
+    <button onclick="alterarPorName()">Alterar texto por Name</button>
+    <script>
+      function alterarPorName() {
+        const elemento = document.getElementsByName('paragrafoName')[0];
+        elemento.textContent = 'Texto alterado por Name.';
       }
-    }
-  </script>
+    </script>
+  </section>
+
+  <!-- Atividade 5: Alterar propriedade por Class -->
+  <section>
+    <h2>5. Alterar propriedade por Class</h2>
+    <p class="paragrafoClass">Texto original.</p>
+    <button onclick="alterarPorClass()">Alterar texto por Class</button>
+    <script>
+      function alterarPorClass() {
+        const elemento = document.getElementsByClassName('paragrafoClass')[0];
+        elemento.textContent = 'Texto alterado por Class.';
+      }
+    </script>
+  </section>
 
 </body>
 </html>
